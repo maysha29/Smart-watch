@@ -23,8 +23,8 @@ const sizes = ["S", "M", "L", "XL"];
 sizes.forEach((size) => {
   const button = document.getElementById(`size-${size}`);
   button.addEventListener("click", () => {
-    sizes.forEach((sizee) => {
-      const btn = document.getElementById(`size-${sizee}`);
+    sizes.forEach((size) => {
+      const btn = document.getElementById(`size-${size}`);
       btn.classList.remove("border-purple-600");
     });
     button.classList.add("border-purple-600");
@@ -110,7 +110,7 @@ document.getElementById("add-to-cart").addEventListener('click', () => {
 document.getElementById("checkout-btn").addEventListener("click", function () {
   const cartModal = document.getElementById("cart-modal");
 
-  const cartConatainer = document.getElementById("cart-items");
+  const cartContainer = document.getElementById("cart-items");
 
   for (const cartItem of cartItems) {
     const tableRow = document.createElement("tr");
@@ -127,7 +127,7 @@ document.getElementById("checkout-btn").addEventListener("click", function () {
     <td class="py-2 px-4">${cartItem.quantity}</td>
     <td class="py-2 px-4">$${cartItem.price}</td>
     `;
-    cartConatainer.appendChild(tableRow);
+    cartContainer.appendChild(tableRow);
   }
 
   cartModal.classList.remove("hidden");
